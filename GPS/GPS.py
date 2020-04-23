@@ -27,8 +27,14 @@ def GPSparser(data):
 				else:
 					gps_data.append(-1.0*float(spliteddata[5]))
 					
-				gps_data.append(float(spliteddata[7]))
-				gps_data.append(float(spliteddata[8]))
+				if not spliteddata[7] == '':
+					gps_data.append(float(spliteddata[7]))
+				else :
+					gps_data.append(-1.0)
+				if not spliteddata[8] == '':
+					gps_data.append(float(spliteddata[8]))
+				else :
+					gps_data.append(-1.0)
 		
 				return gps_data 
 		else :
